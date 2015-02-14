@@ -1,0 +1,76 @@
+<!doctype html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script src="js/morris.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"></script>
+  <script src="js/example.js"></script>
+  <link rel="stylesheet" href="css/example.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css">
+  <link rel="stylesheet" href="css/morris.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container" >
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <h3 class="text-center " style="color:#fff;"><b>SCIGH CRICKET</b></h3>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+        </div>
+<div class="container col-md-offset-1" style="padding-top:70px;">
+<h1>India Past Records</h1>
+<div id="graph-india"></div>
+<h1>Pakistan Past Records</h1>
+<div id="graph-pakistan"></div>
+</div>
+ <!-- Container ends Here -->
+<pre id="code" class="linenums">
+var data = [
+ {'noResult': 9, 'total': 115, 'won': 40, 'lost': 66, 'team': 'vs Australia'},
+ 
+ {'noResult': 5, 'total': 91, 'won': 50, 'lost': 36, 'team': 'vs England'},
+ 
+ {'noResult': 6, 'total': 93, 'won': 46, 'lost': 41, 'team': 'vs New Zealand'},
+ {'noResult': 4, 'total': 126, 'won': 50, 'lost': 72, 'team': 'vs Pakistan'},
+ 
+ {'noResult': 3, 'total': 70, 'won': 25, 'lost': 42, 'team': 'vs South Africa'},
+ {'noResult': 12, 'total': 149, 'won': 83, 'lost': 54, 'team': 'vs  Sri Lanka'}
+
+
+];
+Morris.Line({
+  element: 'graph-india',
+  data: data,
+  xkey: 'team',
+  ykeys: ['total','won','lost','noResult'],
+  labels: ['Total','Win','Lost','No Result'],
+  parseTime: false
+});
+
+var data = [
+
+{'noResult': 4, 'total': 92, 'won': 31, 'lost': 57, 'team': 'vs Australia'},
+
+{'noResult': 2, 'total': 72, 'won': 28, 'lost': 42, 'team': 'vs England'},
+{'noResult': 4, 'total': 126, 'won': 72, 'lost': 50, 'team': 'vs India'},
+
+{'noResult': 3, 'total': 94, 'won': 53, 'lost': 38, 'team': 'vs New Zealand'},
+
+{'noResult': 1, 'total': 71, 'won': 23, 'lost': 47, 'team': 'vs South Africa'},
+{'noResult': 5, 'total': 142, 'won': 81, 'lost': 56, 'team': 'vs Sri Lanka'}
+
+
+];
+Morris.Line({
+  element: 'graph-pakistan',
+  data: data,
+  xkey: 'team',
+  ykeys: ['total','won','lost','noResult'],
+  labels: ['Total','Win','Lost','No Result'],
+  parseTime: false
+});
+
+</pre>
+</body>
